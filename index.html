@@ -1,5 +1,14 @@
-<a href="" id="hyperlink"> ?unknown player? </a>
-
+<h2>How to use</h2>
+<hr>
+<ol>
+    <li>Open your bookmarks (Ctrl + Shift + B)</li>
+    <li>Drag the link to your bookmarks</li>
+    <li>Go onto Roblox then click on the bookmark</li>
+    <li>If the player has their joins on, you will join them</li>
+</ol>
+<p>Bookmarklet: <a href="" id="hyperlink"> ?unknown player? </a> </p> 
+<hr>
+<i>Note: Bookmarklets run code when you use them, be careful when adding/using them</i>
 <script>
     let params = new URLSearchParams(location.search);
     let userId = params.get('playerid') //1264613957
@@ -75,8 +84,7 @@
     "        console.log(response) " +
     "    } " +
     "    main(); "
-
     document.getElementById("hyperlink").href="javascript:" + main; 
-    document.getElementById("hyperlink").innerText=userId; 
+    document.getElementById("hyperlink").innerText="PlayerID-" + userId; 
 </script>
 
