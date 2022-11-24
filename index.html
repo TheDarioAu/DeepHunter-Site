@@ -57,9 +57,13 @@
     "                        const errorType = (`User is ${!presence.userPresenceType ? 'offline' : 'not playing a game'}!`); " +
     "                        throw new Error(errorType) " +
     "                    } " +
-    "                    if (presence.rootPlaceId && presence.gameId) { " +
-    "                        window.Roblox.GameLauncher.joinGameInstance(presence.rootPlaceId, presence.gameId); " +
-    "                        throw new Error('User has joins on') " +
+    "                    if (presence.userId && presence.gameId) { " +
+    "                        if (presence.placeId == presence.rootPlaceId) { " +
+    "                            window.Roblox.GameLauncher.joinGameInstance(presence.rootPlaceId, presence.gameId); " +
+    "                        } else { " +
+    "                            window.Roblox.GameLauncher.joinGameInstance(presence.rootPlaceId); " +
+    "                        } " +
+    "                        throw new Error('User has joins on!') " +
     "                    } " +
     "                    res(userId) " +
     "                }).catch(e => { " +
